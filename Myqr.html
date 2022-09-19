@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyQR</title>
+    <link rel="stylesheet" href="qrcss.css"/>
+    <script src="qrscript.js"></script>
+</head>
+<body >
+    <style>
+
+        body {
+ background-image: url('https://img.pikbest.com/background/20220119/scan-the-qr-code-to-pay-attention-background-image_6220176.jpg!bw700');
+          background-repeat: no-repeat;
+          background-size: cover;
+
+        }
+
+        </style>
+<center>
+<h1>Create Your Own Payment QR</h1>
+<input type="text" id="myTextarea" placeholder="Type here..." maxlength="10"style="width: 320px; margin-left: -220px; height: 30px;border-radius: 10px;">
+<br/>
+      
+
+<button onclick="myFunction()" style="margin-top:5px">MyQrCode</button>
+
+        <img src="https://raw.githubusercontent.com/Pavitar01/Qr/main/myQr.png" id="myImage"alt="QR Code" style="margin-top: 20px"/>
+</center>
+<!---_______________________   SCRIPT  _______________		__________--->
+
+<script>
+
+function myFunction() 
+{
+
+    const message = document.getElementById('myTextarea');
+
+a=message.value;
+
+value1="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=";
+value2="@paytm&pn=PaytmUser&mc=0000&mode=02&purpose=00&orgid=159761";   
+value3=value1+a+value2
+document.getElementById('myImage').src=value3;
+message.value=""
+}
+
+</script>
+
+
+</body>
+</html>
